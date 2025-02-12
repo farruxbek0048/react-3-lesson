@@ -1,4 +1,4 @@
-import { ReactElement, useState } from "react"
+import { useState } from "react"
 
 function Project3() {
     const [formData, setFormData] = useState({name: '', surname: '', email: '', parol: '' })
@@ -11,9 +11,10 @@ function Project3() {
         
         if (formData.name.trim() === '') newErrors.name = "Ism bo'sh bo'lmasligi kerak!"
         if (formData.parol.trim() === ''){
-          newErrors.parol = "Parol bo'lishi majburiy!";
-        } else if(formData.parol.length <= 6) {
-          newErrors.parol = "Parol kamida 6 ta belgidan iborat bo'lishi kerak!"
+          newErrors.parol = "Parol bo'lishi majburiy!"
+        } else if(formData.parol.length <= 6){
+            newErrors.parol = "Parol kamida 6 ta belgidan iborat bo'lishi kerak!";
+          
         }
         if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email noto'g'ri formatda!";
 
